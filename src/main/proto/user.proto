@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package io.s3vt.proto.user;
+
+message UserRequest {
+  string firstName = 1;
+}
+message User {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+service UserService {
+  rpc get(UserRequest) returns (User);
+}
